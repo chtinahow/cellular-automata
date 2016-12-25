@@ -13,7 +13,7 @@ const itemStyle = {
 class RulesBanner extends Component {
   render() {
     const style = Object.assign({}, containerStyle, this.props.style);
-    const sqSize = 25;
+    const sqSize = this.props.squareSize;
     return (
       <div style={style}>
         <RuleButton size={sqSize} bottom={this.props.rules[0]}

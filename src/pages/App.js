@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 
 import RulesBanner from '../components/RulesBanner';
 import RenderArea from '../components/RenderArea';
+import StartingRow from '../components/StartingRow';
 
-import { toggleRule } from '../reducers/settings';
+import { toggleRule, toggleInitSquare } from '../reducers/settings';
 
 const rulesStyle = {
   margin: '20px'
@@ -32,6 +33,11 @@ class App extends Component {
     dispatch(toggleRule(ruleIndex));
   }
 
+  onInitRowClick(initRowIndex) {
+    const { dispatch } = this.props;
+    dispatch(toggleInitSquare(initRowIndex));
+  }
+
   render() {
     return (
       <div style={appStyle}>
@@ -39,9 +45,13 @@ class App extends Component {
           <h2 style={appHeaderStyle}>Cells R' Fun</h2>
         </div>
         <div>
-          <RulesBanner
+          <RulesBanner squareSize={25}
             style={rulesStyle} rules={this.props.settings.rules}
             onRuleButtonClick={this.onRuleButtonClick.bind(this)}/>
+          <hr style={hrStyle}/>
+          <StartingRow squareSize={25}
+            initRow={this.props.settings.initRow}
+            onInitRowClick={this.onInitRowClick.bind(this)}/>
           <hr style={hrStyle}/>
           <RenderArea />
         </div>
