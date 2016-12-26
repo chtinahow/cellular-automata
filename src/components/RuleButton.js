@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 
-const fillStyle = {
+const emptyStyle = {
   fill:'#9933cc'
 }
 
-const emptyStyle = {
+const fillStyle = {
   fill:'#f4e7fb'
 }
 
@@ -16,13 +16,13 @@ class RuleButton extends Component {
       <Button onClick={this.props.onClick}>
         <svg width={size*3} height={size*2}>
           <rect width={size} height={size}
-                style={left ? fillStyle : emptyStyle} />
+                style={left ? emptyStyle : fillStyle} />
           <rect x={size} width={size} height={size}
-                style={middle ? fillStyle : emptyStyle} />
+                style={middle ? emptyStyle : fillStyle} />
           <rect x={size*2} width={size} height={size}
-                style={right ? fillStyle : emptyStyle} />
+                style={right ? emptyStyle : fillStyle} />
           <rect x={size} y={size} width={size} height={size}
-                style={bottom ? fillStyle : emptyStyle} />
+                style={bottom ? emptyStyle : fillStyle} />
         </svg>
       </Button>
     );

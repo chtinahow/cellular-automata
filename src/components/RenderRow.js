@@ -12,18 +12,16 @@ const emptyStyle = {
 
 class RenderRow extends Component {
   render() {
-    // TODO: Add cursor to pointer
-    // if (onClick) {
-    // }
-    const {squareSize, numberOfSquares, onClick} = this.props;
+    const {squareSize, onClick, x, y} = this.props;
     const squares = this.props.row.map((fill, index) => {
       return (<rect key={index} style={fill ? fillStyle : emptyStyle}
                     onClick={onClick.bind(this, index)}
                     x={squareSize*index}
                     width={squareSize} height={squareSize}/>)
     });
+    const translate = {x:x?x:0, y:y?y:0};
     return (
-      <g>
+      <g transform={`translate(${translate.x}, ${translate.y})`}>
         {squares}
       </g>
     );

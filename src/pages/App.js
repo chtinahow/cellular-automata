@@ -53,7 +53,9 @@ class App extends Component {
             initRow={this.props.settings.initRow}
             onInitRowClick={this.onInitRowClick.bind(this)}/>
           <hr style={hrStyle}/>
-          <RenderArea />
+          <RenderArea squareSize={25} rows={15}
+            rules={this.props.settings.rules}
+            initRow={this.props.settings.initRow}/>
         </div>
       </div>
     );
