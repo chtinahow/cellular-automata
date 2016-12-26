@@ -18,7 +18,7 @@ export function toggleInitSquare(initRowIndex) {
 }
 
 /* reducer */
-const initialRow = '.'.repeat(24).split('.').map(() => false);
+const initialRow = '.'.repeat(48).split('.').map(() => false);
 
 export default function settings(settings = {
     rules: [false, false, false, false,

@@ -41,9 +41,6 @@ class App extends Component {
   render() {
     return (
       <div style={appStyle}>
-        <div style={appHeaderStyle}>
-          <h2 style={appHeaderStyle}>Cells R' Fun</h2>
-        </div>
         <div>
           <RulesBanner squareSize={25}
             style={rulesStyle} rules={this.props.settings.rules}

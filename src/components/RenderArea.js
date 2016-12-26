@@ -25,9 +25,9 @@ class RenderArea extends Component {
       }
       else {
         const newRow = rowValues[rowIndex - 1].map(function(fillValue, sqIndex, array) {
-          const left = array[sqIndex - 1]?'t':'f';
+          const left = (sqIndex===0?array[array.length - 1]:array[sqIndex - 1])?'t':'f';
           const current = fillValue?'t':'f';
-          const right = array[sqIndex + 1]?'t':'f';
+          const right = (sqIndex===(array.length - 1)?array[0]:array[sqIndex + 1])?'t':'f';
 
           return rulesDictionary[left + current + right];
         });
